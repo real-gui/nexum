@@ -9,3 +9,212 @@
     
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Mentores</title>
+   
+    <link rel="stylesheet" href="cadastro-mentores.css">
+</head>
+<body>
+
+    <header class="topo-navegacao">
+        <div class="logo">
+            <a href="index.html">Nexum</a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="mentores.html">Explorar Mentores</a>
+            
+            <button type="button" id="toggle-tema" aria-label="Alternar tema">🌙 Modo Escuro</button>
+        </nav>
+    </header>
+
+    <main class="container-cadastro">
+        
+       
+        <section class="secao-formulario">
+            <header class="cabecalho-form">
+                <h1>Torne-se um Mentor Voluntário</h1>
+                <p>Ajude estudantes do ensino médio, compartilhe conhecimento e acumule horas complementares certificadas.</p>
+            </header>
+
+            <form id="form-cadastro-mentor">
+                
+                
+                <fieldset class="grupo-campos">
+                    <legend>1. Seus Dados</legend>
+
+                    <div class="campo">
+                        <label for="nome-mentor">Nome Completo *</label>
+                        <input type="text" id="nome-mentor" name="nome" placeholder="Ex: Lucas Andrade" required>
+                    </div>
+
+                    <div class="campo-duplo">
+                        <div class="campo">
+                            <label for="email-mentor">E-mail *</label>
+                            <input type="email" id="email-mentor" name="email" placeholder="lucas@universidade.edu.br" required>
+                        </div>
+                        <div class="campo">
+                            <label for="whatsapp-mentor">WhatsApp</label>
+                            <input type="text" id="whatsapp-mentor" name="contato" placeholder="(11) 99999-9999 ou @lucas">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="foto-mentor">URL (opcional)</label>
+                        <input type="url" id="foto-mentor" name="foto" placeholder="https://github.com/seu-usuario.png">
+                    </div>
+                </fieldset>
+
+                
+                <fieldset class="grupo-campos">
+                    <legend>2. Formação e Vínculo</legend>
+
+                    <div class="campo-duplo">
+                        <div class="campo">
+                            <label for="nivel-formacao">Nível de formação *</label>
+                            <select id="nivel-formacao" name="nivel" required>
+                                <option value="">Selecione...</option>
+                                <option value="graduacao">Ensino Superior (Cursando)</option>
+                                <option value="graduado">Ensino Superior (Concluído)</option>
+                                <option value="tecnico">Curso Técnico</option>
+                                <option value="pos">Pós-graduação / Mestrado</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="curso-mentor">Curso / Área *</label>
+                            <input type="text" id="curso-mentor" name="curso" placeholder="Ex: Engenharia, Letras, ADS..." required>
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="instituicao-mentor">Instituição de Ensino *</label>
+                        <input type="text" id="instituicao-mentor" name="instituicao" placeholder="Ex: USP, Fatec, IFSP..." required>
+                    </div>
+                </fieldset>
+
+                
+                <fieldset class="grupo-campos">
+                    <legend>3. Especialidades de Mentoria</legend>
+
+                    <div class="campo">
+                        <span>Quais matérias mais se identifica? *</span>
+                        <div class="grid-checkboxes">
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Matemática">
+                                <span>Matemática</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Física">
+                                <span>Física</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Química">
+                                <span>Química</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Biologia">
+                                <span>Biologia</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Redação">
+                                <span>Redação</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Português">
+                                <span>Português</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="História">
+                                <span>História</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Programação">
+                                <span>Programação</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="bio-mentor">Como você conduz o processo de ensino? (Compartilhe sua resposta) *</label>
+                        <textarea 
+                            id="bio-mentor" 
+                            name="bio" 
+                            rows="3" 
+                            maxlength="180"
+                            placeholder="Ex: Gosto de resolver exercícios passo a passo e ajudar a destravar dúvidas para o vestibular." 
+                            required
+                        ></textarea>
+                        <small class="contador-caracteres"><span id="chars-restantes">180</span> caracteres restantes</small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="disponibilidade-mentor">Disponibilidade Semanal *</label>
+                        <select id="disponibilidade-mentor" name="disponibilidade" required>
+                            <option value="manha">Manhã (08h às 12h)</option>
+                            <option value="tarde">Tarde (13h às 18h)</option>
+                            <option value="noite" selected>Noite (18h às 22h)</option>
+                            <option value="fds">Finais de Semana</option>
+                            <option value="flexivel">Horário Flexível</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                
+                <div class="campo-termo">
+                    <label>
+                        <input type="checkbox" id="aceite-termos" required>
+                        Declaro que as informações são verdadeiras para validação das minhas horas de mentoria voluntária.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-cadastrar">Finalizar Cadastro de Mentor</button>
+            </form>
+        </section>
+
+        <aside class="coluna-preview">
+            <div class="preview-sticky">
+                <span class="label-preview">👀 Pré-visualização do seu perfil</span>
+                
+                <article class="mentor-card preview-card">
+                    <div class="card-header">
+                        <img src="https://via.placeholder.com/80" alt="Avatar preview" id="preview-foto" class="mentor-avatar">
+                        <span class="badge-status">Novo Mentor</span>
+                    </div>
+
+                    <div class="card-body">
+                        <h3 id="preview-nome">Seu Nome Aqui</h3>
+                        <p id="preview-curso" class="mentor-curso">Seu Curso • Sua Instituição</p>
+                        
+                        <div class="tags-materias" id="preview-tags">
+                            <span class="tag">Selecione matérias</span>
+                        </div>
+
+                        <p id="preview-bio" class="mentor-bio">
+                            Sua descrição aparecerá aqui para os alunos conhecerem seu estilo de mentoria.
+                        </p>
+                    </div>
+
+                    <div class="card-footer">
+                        <span>🏅 <strong>0h</strong> certificadas</span>
+                        <span id="preview-turno">🌙 Noite</span>
+                    </div>
+                </article>
+            </div>
+        </aside>
+
+    </main>
+
+    <dialog id="modal-sucesso">
+        <h2>🎉 Cadastro realizado!</h2>
+        <p>Bem-vindo ao time de mentores do Nexum. Seu perfil já está pronto para receber solicitações.</p>
+        <button type="button" id="btn-fechar-sucesso">Ir para Painel de Mentores</button>
+    </dialog>
+
+    <script src="cadastro-mentores.js"></script>
+</body>
+</html>
