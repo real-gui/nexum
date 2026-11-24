@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Central de Feedback</title>
+
+    <link rel="stylesheet" href="feedback.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Central de Feedback</h1>
+        <p>Sua opinião é importante para melhorarmos nossa plataforma.</p>
+    </header>
+
+    <main>
+
+        <section class="feedback-container">
+
+            <h2>Envie seu feedback</h2>
+
+            <form id="feedback-form"
+                  action="/api/feedback"
+                  method="POST"
+                  enctype="multipart/form-data">
+
+                <!-- Identificação -->
+
+                <fieldset>
+
+                    <legend>Informações pessoais</legend>
+
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Seu nome"
+                            autocomplete="name"
+                            maxlength="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Seu e-mail"
+                            autocomplete="email">
+                    </div>
+
+                </fieldset>
+
+                <!-- Categoria -->
+
+                <div class="form-group">
+
+                    <label for="category">Tipo de feedback</label>
+
+                    <select id="category" name="category" required>
+
+                        <option value="">Selecione uma categoria</option>
+                        <option value="suggestion">Sugestão</option>
+                        <option value="bug">Reportar um erro</option>
+                        <option value="complaint">Reclamação</option>
+                        <option value="compliment">Elogio</option>
+                        <option value="usability">Usabilidade</option>
+                        <option value="other">Outros</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Avaliação -->
+
+                <fieldset class="rating">
+
+                    <legend>Como você avalia sua experiência?</legend>
+
+                    <label>
+                        <input type="radio" name="rating" value="1" required>
+                        Muito ruim
+                    </label>
+
+                    <label>
+                        <input type="radio" name="rating" value="2">
+                        Ruim
+                    </label>
+
+                    <label>
+                        <input type="radio" name="rating" value="3">
+                        Regular
+                    </label>
+
+                    <label>
+                        <input type="radio" name="rating" value="4">
+                        Boa
+                    </label>
+
+                    <label>
+                        <input type="radio" name="rating" value="5">
+                        Excelente
+                    </label>
+
+                </fieldset>
+
+                <!-- Assunto -->
+
+                <div class="form-group">
+
+                    <label for="subject">Assunto</label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        maxlength="100"
+                        placeholder="Resuma seu feedback"
+                        required>
+
+                </div>
+
+                <!-- Mensagem -->
+
+                <div class="form-group">
+
+                    <label for="message">Descrição do feedback</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        minlength="10"
+                        maxlength="2000"
+                        placeholder="Descreva sua experiência..."
+                        required></textarea>
+
+                </div>
+
+                <!-- Anexos -->
+
+                <div class="form-group">
+
+                    <label for="attachment">
+                        Anexar imagem ou documento (opcional)
+                    </label>
+
+                    <input
+                        type="file"
+                        id="attachment"
+                        name="attachment"
+                        accept=".png,.jpg,.jpeg,.pdf">
+
+                </div>
+
+                <!-- Privacidade -->
+
+                <div class="form-group">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="allow_contact"
+                            value="true">
+
+                        Autorizo o contato para esclarecimentos
+                        sobre este feedback.
+                    </label>
+
+                    <p>
+                        Consulte nossa
+                        <a href="/privacidade">Política de Privacidade</a>.
+                    </p>
+
+                </div>
+
+                <!-- Botões -->
+
+                <div class="form-actions">
+
+                    <button type="reset">
+                        Limpar formulário
+                    </button>
+
+                    <button type="submit">
+                        Enviar feedback
+                    </button>
+
+                </div>
+
+                <!-- Retorno do sistema -->
+
+                <div
+                    id="feedback-status"
+                    role="status"
+                    aria-live="polite">
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Central de Feedback — Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="feedback.js" defer></script>
+
+</body>
+</html>
