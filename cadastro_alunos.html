@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Alunos</title>
+
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body>
+
+    <header class="topo-navegacao">
+        <div class="logo">
+            <a href="index.html">Nexum</a>
+        </div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="cadastro_mentores.html">Explorar Mentores</a>
+            <a href="cadastro_alunos.html">Explorar alunos</a>
+            <a href="feedback.html">Feedback</a>
+            <a href="simulador_agenda.html">Agenda</a>
+
+            <button type="button" id="toggle-tema" aria-label="Alternar tema">🌙 Modo Escuro</button>
+        </nav>
+    </header>
+
+    <main class="container-cadastro">
+
+
+        <section class="secao-formulario">
+            <header class="cabecalho-form">
+                <h1>Faça parte da comunidade Nexum</h1>
+                <p> Cadastre-se para encontrar mentores, aprofundar seus conhecimentos e desenvolver novas habilidades.
+                    Compartilhe seus interesses acadêmicos e descubra oportunidades de aprendizado que podem transformar
+                    sua trajetória.</p>
+            </header>
+
+            <form id="form-cadastro-aluno">
+
+
+                <fieldset class="grupo-campos">
+                    <legend>1. Seus Dados</legend>
+
+                    <div class="campo">
+                        <label for="nome-aluno">Nome Completo *</label>
+                        <input type="text" id="nome-aluno" name="nome" placeholder="Ex: José Gomes" required>
+                    </div>
+
+                    <div class="campo-duplo">
+                        <div class="campo">
+                            <label for="email-aluno">E-mail *</label>
+                            <input type="email" id="email-aluno" name="email" placeholder="pedro@universidade.edu.br"
+                                required>
+                        </div>
+                        <div class="campo">
+                            <label for="whatsapp-aluno">WhatsApp</label>
+                            <input type="tel" id="whatsapp-aluno" name="contato" placeholder="(11) 99999-9999 ou @joão">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="foto-aluno">URL (opcional)</label>
+                        <input type="url" id="foto-aluno" name="foto" placeholder="https://github.com/seu-usuario.png">
+                    </div>
+                </fieldset>
+
+
+                <fieldset class="grupo-campos">
+                    <legend>2. Formação e Escolaridade</legend>
+
+                    <div class="campo-duplo">
+                        <div class="campo">
+                            <label for="nivel-formacao">Qual o seu nível de escolaridade*</label>
+                            <select id="nivel-formacao" name="nivel" required>
+                                <option value="">Selecione...</option>
+                                <option value="ensino-médio-3">3º Ano do Ensino Médio</option>
+                                <option value="ensino-médio-2">2º Ano do Ensino Médio</option>
+                                <option value="ensino-médio-1">1º Ano do Ensino Médio</option>
+                                <option value="ensino-fundamental-2">Ensino Fundamental 2</option>
+                                <option value="ensino-fundamental-1">Ensino Fundamental 1</option>
+                            </select>
+                        </div>
+
+                        <div class="campo">
+                            <label for="curso-aluno">Curso / Área (opcional)</label>
+                            <input type="text" id="curso-aluno" name="curso"
+                                placeholder="Ex: Engenharia, Letras, ADS...">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="instituicao-aluno">Instituição de ensino *</label>
+                        <input type="text" id="instituicao-aluno" name="escola" placeholder="Ex: SESI, ETEC..."
+                            required>
+                    </div>
+                </fieldset>
+
+
+                <fieldset class="grupo-campos">
+                    <legend>3. Selecione as disciplinas nas quais você gostaria de receber acompanhamento.</legend>
+
+                    <div class="campo">
+                        <strong>Disciplinas de interesse *</strong>
+
+                        <p>
+                            Quais matérias você gostaria de estudar ou aprofundar?
+                            Selecione aquelas em que acredita que o acompanhamento
+                            de um mentor pode fazer a diferença.
+                        </p>
+                        <div class="grid-checkboxes">
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Matemática">
+                                <span>Matemática</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Física">
+                                <span>Física</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Química">
+                                <span>Química</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Biologia">
+                                <span>Biologia</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Redação">
+                                <span>Redação</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Português">
+                                <span>Português</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="História">
+                                <span>História</span>
+                            </label>
+                            <label class="chip-checkbox">
+                                <input type="checkbox" name="materias" value="Programação">
+                                <span>Programação</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="bio-aluno">Conte um pouco sobre os métodos de ensino que facilitam sua aprendizagem?
+                            (Compartilhe sua resposta)
+                            *</label>
+                        <textarea id="bio-aluno" name="bio" rows="3" maxlength="180"
+                            placeholder="Ex: Gosto de aulas mais práticas, aulas teóricas são mais difíceis para mim."
+                            required></textarea>
+                        <small class="contador-caracteres"><span id="chars-restantes">180</span> caracteres
+                            restantes</small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="disponibilidade-aluno">Disponibilidade Semanal *</label>
+                        <select id="disponibilidade-aluno" name="disponibilidade" required>
+                            <option value="manha">Manhã (08h às 12h)</option>
+                            <option value="tarde">Tarde (13h às 18h)</option>
+                            <option value="noite" selected>Noite (18h às 22h)</option>
+                            <option value="fds">Finais de Semana</option>
+                            <option value="flexivel">Horário Flexível</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+
+                <div class="campo-termo">
+                    <label>
+                        <input type="checkbox" id="aceite-termos" required>
+                        Declaro que as informações fornecidas são verdadeiras e autorizo sua utilização para a criação e
+                        o gerenciamento do meu perfil na plataforma Nexum, conforme as condições de privacidade da
+                        plataforma.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-cadastrar">Finalizar Cadastro de Aluno</button>
+            </form>
+        </section>
+
+        <aside class="coluna-preview">
+            <div class="preview-sticky">
+                <span class="label-preview">👀 Pré-visualização do seu perfil</span>
+
+                <article class="aluno-card preview-card">
+                    <div class="card-header">
+                        <img src="https://via.placeholder.com/80" alt="Avatar preview" id="preview-foto"
+                            class="aluno-avatar">
+                        <span class="badge-status">Novo Aluno</span>
+                    </div>
+
+                    <div class="card-body">
+                        <h3 id="preview-nome">Seu Nome Aqui</h3>
+                        <p id="preview-escolaridade" class="aluno-curso"> Escolaridade • Instituição</p>
+
+                        <div class="tags-materias" id="preview-tags">
+                            <span class="tag">Selecione matérias</span>
+                        </div>
+
+                        <p id="preview-bio" class="mentor-bio">
+                            Sua descrição aparecerá aqui para os mentores conhecerem seus objetivos de aprendizagem.
+                        </p>
+                    </div>
+
+                    <div class="card-footer">
+                        <span id="preview-turno">🌙 Noite</span>
+                    </div>
+                </article>
+            </div>
+        </aside>
+
+    </main>
+
+    <dialog id="modal-sucesso">
+        <h2>🎉 Cadastro realizado!</h2>
+        <p>Bem-vindo à comunidade Nexum! Seu perfil de aluno está pronto. Agora você pode explorar mentores e encontrar
+            oportunidades para desenvolver seus conhecimentos.</p>
+        <button type="button" id="btn-fechar-sucesso">Ir para Painel do Aluno</button>
+    </dialog>
+
+    <script src="cadastro-alunos.js"></script>
+</body>
+
+</html>
